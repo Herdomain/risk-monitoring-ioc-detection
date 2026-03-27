@@ -1,29 +1,29 @@
 # 🌐 Network Analysis with Wireshark & Nmap
 
 ## 📌 Overview
-This project explores how network traffic and system information can be analyzed using Wireshark and Nmap.
+In this project, I explored how network traffic and system information can be analyzed using Wireshark and Nmap.
 
-The goal is to understand how much information can be gathered from a network and why monitoring and securing that information is important.
+My goal was to understand how much information can be gathered from a network and why monitoring and securing that information is important.
 
 ---
 
-## ⚙️ What This Project Does
+## ⚙️ What I Did
 
-This analysis combines two tools:
+I used two main tools:
 
-- **Wireshark** → captures and analyzes live network traffic  
-- **Nmap** → scans the network to identify devices, open ports, and services  
+- **Wireshark** to capture and analyze live network traffic  
+- **Nmap** to scan the network and identify devices, open ports, and services  
 
-Together, they provide a clearer picture of:
-- What devices are on the network  
-- How they communicate  
-- What potential risks may exist  
+By combining these tools, I was able to:
+- Identify devices on the network  
+- Observe how they communicate  
+- Understand potential security risks  
 
 ---
 
 ## 🧪 Environment Setup
 
-The analysis was performed using three virtual machines:
+I set up three virtual machines:
 
 - Windows Server  
 - Linux Server (Ubuntu)  
@@ -35,21 +35,20 @@ All scans and traffic captures were performed from the Kali machine.
 
 ## 🔍 Approach
 
-This project followed these steps:
+To complete this analysis, I:
 
-- Identified device IP addresses across the network  
-- Ran Nmap scans to detect:
-  - Open ports  
-  - Operating systems  
-  - Active services  
+- Identified IP addresses for each device  
+- Ran Nmap scans to detect open ports, operating systems, and services  
 - Captured network traffic using Wireshark  
+- Filtered and analyzed packets (e.g., TCP traffic)  
 - Matched scan results with live traffic data  
-- Analyzed communication patterns (e.g., TCP handshakes)  
 - Collected MAC addresses and device details  
 
 ---
 
 ## 📊 Key Findings
+
+Through this analysis, I:
 
 - Identified multiple active devices on the network  
 - Discovered open ports such as:
@@ -58,23 +57,18 @@ This project followed these steps:
   - **3306 (MySQL)**  
 - Observed real communication between devices using TCP handshakes  
 - Matched Nmap scan results with Wireshark packet data  
-- Confirmed how much system and network information is exposed during scans  
+- Confirmed how much system and network information can be exposed during scans  
 
 ---
 
 ## 🎯 Why This Matters
 
-This project highlights that:
+This project helped me understand that:
 
 - Even a basic network scan can reveal detailed system information  
 - Open ports can expose services that may be vulnerable  
-- Network traffic contains valuable data about communication patterns  
-- Combining tools provides stronger visibility than using one alone  
-
-Understanding this helps organizations:
-- Identify potential vulnerabilities  
-- Monitor network activity more effectively  
-- Strengthen overall security posture  
+- Network traffic contains valuable insights into system behavior  
+- Using multiple tools together provides better visibility than using one alone  
 
 ---
 
@@ -90,12 +84,12 @@ Understanding this helps organizations:
 ## 🔄 Workflow Summary
 
 1. Set up virtual machines  
-2. Identify IP addresses of each device  
-3. Run Nmap scans across the network  
-4. Capture traffic using Wireshark  
-5. Filter and analyze packets (e.g., TCP traffic)  
-6. Match scan results with observed network activity  
-7. Document findings  
+2. Identified IP addresses of each device  
+3. Ran Nmap scans across the network  
+4. Captured traffic using Wireshark  
+5. Analyzed packets and communication patterns  
+6. Matched scan results with observed activity  
+7. Documented findings  
 
 ---
 
@@ -110,7 +104,9 @@ Understanding this helps organizations:
 
 ## 🚀 Future Improvements
 
-- Segment the network to limit exposure  
+If I were to extend this project, I would:
+
+- Segment the network to reduce exposure  
 - Close or secure unnecessary open ports  
 - Implement continuous network monitoring  
 - Add alerting for unusual traffic patterns  
@@ -120,7 +116,7 @@ Understanding this helps organizations:
 
 ## 🔐 Security Value
 
-This project demonstrates how to:
+This project demonstrates my ability to:
 
 - Discover devices and services on a network  
 - Analyze real network traffic  
@@ -132,7 +128,7 @@ This project demonstrates how to:
 
 ## 📄 Full Report
 
-See full detailed analysis and screenshots here:  
+See the full detailed analysis and screenshots here:  
 👉 :contentReference[oaicite:0]{index=0}
 
 
@@ -140,5 +136,3 @@ See full detailed analysis and screenshots here:
 
 
 
-
-Recommended Screenshots 
