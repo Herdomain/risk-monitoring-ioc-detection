@@ -1,41 +1,42 @@
-# 🎮 PSN Data Breach Analysis & Incident Response
+# 🔍 Risk Monitoring & Threat Detection (PRTG + IoCs)
 
-In April 2011, Sony's PlayStation Network was taken offline for 23 days following a breach that exposed the personal and financial data of approximately 77 million users. It remains one of the most studied cybersecurity failures in corporate history, not just because of its scale, but because of how long it went undetected and how poorly it was handled once discovered.
+Threats that go unmonitored go undetected.
 
-This case study breaks down what went wrong, why it went wrong, and what a stronger response would have looked like.
-
----
-
-## What Happened
-
-Attackers exploited unpatched network vulnerabilities, likely through SQL injection, to gain unauthorized access to Sony's infrastructure. Once inside, they moved through the network undetected, exfiltrating names, addresses, email addresses, passwords, and payment card data before Sony identified the intrusion.
-
-The breach wasn't just a technical failure. Delayed detection, slow public disclosure, and an absence of encryption on sensitive data turned a serious incident into a reputational and regulatory crisis.
+This project designs a proactive monitoring strategy using Paessler PRTG across three critical business systems, an SQL database, a Linux development environment, and an IIS web server,  mapping each to real-world Indicators of Compromise before an incident occurs.
 
 ---
 
-## Where Sony Failed
+## Why These Systems
 
-**Detection** — The intrusion went undetected long enough for attackers to exfiltrate data at scale. Stronger log monitoring and behavioral anomaly detection would have surfaced the attack earlier.
+Each monitored asset was selected based on data sensitivity and business impact:
 
-**Encryption** — Sensitive user data including passwords was not adequately protected at rest. Encryption would not have prevented the breach but would have significantly reduced its impact.
-
-**Disclosure** — Sony waited several days after discovering the breach before notifying users, drawing regulatory scrutiny and eroding public trust at a critical moment.
-
-**Incident Response** — The absence of a structured response plan meant containment and recovery were reactive rather than coordinated, extending the 23-day outage.
+- **SQL Database** — Holds proprietary and financial data; primary target for exfiltration and injection attacks
+- **Linux Development Environment** — Exposed to privilege escalation and unauthorized access attempts
+- **IIS Web Server** — Public-facing attack surface vulnerable to brute force, DDoS, and web application exploits
 
 ---
 
-## How It Should Have Been Handled
+## Monitoring Strategy
 
-Using the NIST Incident Response Lifecycle as a guide:
+Each system is assigned PRTG sensors with defined alert thresholds tied directly to known attack behaviors.
 
-1. **Detect** — Anomaly detection and log monitoring flag unusual query patterns or data transfer volumes early
-2. **Contain** — Affected systems isolated immediately; compromised accounts disabled
-3. **Investigate** — Logs analyzed to identify attack vectors, scope, and exfiltrated data
-4. **Notify** — Regulators and users informed promptly in line with disclosure obligations
-5. **Eradicate & Recover** — Vulnerabilities patched, credentials reset, systems restored from clean backups
-6. **Review** — Lessons learned session conducted; detection and response capabilities updated
+Thresholds are calibrated against expected baseline activity to balance detection accuracy and minimize alert fatigue.
+
+| System | Sensor Focus | IoCs Monitored |
+|---|---|---|
+| SQL Database | Query volume, authentication events | Unusual query patterns, failed logins, data exfiltration |
+| Linux Environment | CPU load, user activity, process monitoring | Privilege escalation, unauthorized access, abnormal processes |
+| IIS Web Server | Bandwidth usage, request rates, error codes | Brute force attempts, DDoS patterns, suspicious traffic spikes |
+
+---
+
+## If a Threat Were Detected
+
+1. **Validate** — Confirm abnormal sensor activity against established baseline behavior
+2. **Investigate** — Identify affected systems and entry points; analyze logs for attack patterns
+3. **Escalate** — Notify stakeholders based on severity classification; document findings and potential impact
+4. **Contain** — Block suspicious IPs, sessions, or processes; isolate affected systems if needed
+5. **Improve** — Tune thresholds and expand sensor coverage based on findings
 
 ---
 
@@ -43,17 +44,19 @@ Using the NIST Incident Response Lifecycle as a guide:
 
 | Framework | Application |
 |---|---|
-| NIST SP 800-61 | Incident response lifecycle structure |
-| MITRE ATT&CK | Attack technique mapping (initial access, lateral movement, exfiltration) |
-| CIS Controls | Security gaps identified and remediation mapped |
+| NIST SP 800-61 | Incident detection and response structure |
+| MITRE ATT&CK | IoC mapping to known attack techniques |
+| CIS Controls | Asset prioritization and monitoring best practices |
 
 ---
 
 ## Artifacts & Outputs
 
-- Breach timeline and attack analysis
-- Incident response gap assessment
-- Security improvement recommendations mapped to NIST, MITRE, and CIS
+- Sensor configuration and threshold definitions per system
+  
+- IoC mapping table linking sensors to real-world attack patterns
+  
+- Monitoring coverage map across critical assets
 
-> 📌 *Breach timeline visualization coming soon.*
+> 📌 *Sensor table and PRTG screenshots coming soon.*
 
